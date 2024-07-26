@@ -1,0 +1,353 @@
+C:\Users\Dinak>ssh dp@192.168.77.76
+dp@192.168.77.76's password:
+Linux kali 6.8.11-amd64 #1 SMP PREEMPT_DYNAMIC Kali 6.8.11-1kali2 (2024-05-30) x86_64
+
+The programs included with the Kali GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+┌──(dp㉿kali)-[~]
+└─$ cd Downloads
+
+┌──(dp㉿kali)-[~/Downloads]
+└─$ git clone https://github.com/Und3rf10w/kali-anonsurf.git
+Cloning into 'kali-anonsurf'...
+remote: Enumerating objects: 474, done.
+remote: Counting objects: 100% (59/59), done.
+remote: Compressing objects: 100% (27/27), done.
+remote: Total 474 (delta 46), reused 32 (delta 32), pack-reused 415
+Receiving objects: 100% (474/474), 199.78 KiB | 1.13 MiB/s, done.
+Resolving deltas: 100% (157/157), done.
+
+┌──(dp㉿kali)-[~/Downloads]
+└─$ cd kali-anonsurf
+
+┌──(dp㉿kali)-[~/Downloads/kali-anonsurf]
+└─$ sudo ./installer.sh
+[sudo] password for dp:
+/usr/bin/gpg
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+Executing: /tmp/apt-key-gpghome.cIXCXHbdzN/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys AB9660B9EB2CC88B
+gpg: key AB9660B9EB2CC88B: public key "Launchpad PPA for I2P Maintainers" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+Get:1 http://kali.download/kali kali-rolling InRelease [41.5 kB]
+Get:2 https://ppa.launchpadcontent.net/i2p-maintainers/i2p/ubuntu noble InRelease [18.1 kB]
+Get:3 http://kali.download/kali kali-rolling/main amd64 Packages [19.9 MB]
+Get:4 https://ppa.launchpadcontent.net/i2p-maintainers/i2p/ubuntu noble/main amd64 Packages [1280 B]
+Get:5 https://ppa.launchpadcontent.net/i2p-maintainers/i2p/ubuntu noble/main Translation-en [788 B]
+Get:6 http://kali.download/kali kali-rolling/main amd64 Contents (deb) [47.2 MB]
+Get:7 http://kali.download/kali kali-rolling/non-free amd64 Packages [193 kB]
+Get:8 http://kali.download/kali kali-rolling/non-free amd64 Contents (deb) [863 kB]
+Get:9 http://kali.download/kali kali-rolling/non-free-firmware amd64 Packages [33.1 kB]
+Get:10 http://kali.download/kali kali-rolling/non-free-firmware amd64 Contents (deb) [16.9 kB]
+Fetched 68.2 MB in 2min 20s (486 kB/s)
+
+Reading package lists... Done
+W: https://ppa.launchpadcontent.net/i2p-maintainers/i2p/ubuntu/dists/noble/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  famfamfam-flag-png libeclipse-jdt-core-java libel-api-java libgetopt-java libgsecuredelete0 libjbigi-jni
+  libjetty9-java libjson-simple-java libjsp-api-java libservice-wrapper-java libservice-wrapper-jni
+  libservlet-api-java libtaglibs-standard-impl-java libtaglibs-standard-jstlel-java libtaglibs-standard-spec-java
+  libtomcat9-java libwebsocket-api-java service-wrapper tor-geoipdb
+Suggested packages:
+  privoxy syndie jetty9 libjson-simple-doc libservice-wrapper-doc tomcat9 nautilus-wipe mixmaster torbrowser-launcher
+  apparmor-utils nyx obfs4proxy
+Recommended packages:
+  torsocks
+The following NEW packages will be installed:
+  famfamfam-flag-png i2p i2p-router libeclipse-jdt-core-java libel-api-java libgetopt-java libgsecuredelete0
+  libjbigi-jni libjetty9-java libjson-simple-java libjsp-api-java libservice-wrapper-java libservice-wrapper-jni
+  libservlet-api-java libtaglibs-standard-impl-java libtaglibs-standard-jstlel-java libtaglibs-standard-spec-java
+  libtomcat9-java libwebsocket-api-java secure-delete service-wrapper tor tor-geoipdb
+0 upgraded, 23 newly installed, 0 to remove and 215 not upgraded.
+Need to get 33.8 MB of archives.
+After this operation, 60.6 MB of additional disk space will be used.
+Get:1 http://kali.download/kali kali-rolling/main amd64 famfamfam-flag-png all 0.1-3.2 [102 kB]
+Get:3 https://ppa.launchpadcontent.net/i2p-maintainers/i2p/ubuntu noble/main amd64 i2p-router all 2.6.0-1~ubuntu1 [11.8 MB]
+Get:2 http://http.kali.org/kali kali-rolling/main amd64 libgetopt-java all 1.0.14+dfsg-6 [25.7 kB]
+Get:4 http://kali.download/kali kali-rolling/main amd64 libjson-simple-java all 2.3.0-1 [63.8 kB]
+Get:6 http://kali.download/kali kali-rolling/main amd64 libjsp-api-java all 2.3.4-3 [53.7 kB]
+Get:7 http://kali.download/kali kali-rolling/main amd64 libservlet-api-java all 4.0.1-2 [81.0 kB]
+Get:8 http://kali.download/kali kali-rolling/main amd64 libwebsocket-api-java all 1.1-2 [40.1 kB]
+Get:9 http://kali.download/kali kali-rolling/main amd64 libjetty9-java all 9.4.54-1 [2980 kB]
+Get:5 http://mirror.kku.ac.th/kali kali-rolling/main amd64 libel-api-java all 3.0.0-3 [64.9 kB]
+Get:18 http://mirror.aktkn.sg/kali kali-rolling/main amd64 secure-delete amd64 3.1-10 [76.3 kB]
+Get:21 http://mirror.aktkn.sg/kali kali-rolling/main amd64 tor-geoipdb all 0.4.8.12-1 [2316 kB]
+Get:10 http://kali.download/kali kali-rolling/main amd64 libtaglibs-standard-spec-java all 1.2.5-3 [37.8 kB]
+Get:11 http://kali.download/kali kali-rolling/main amd64 libtaglibs-standard-impl-java all 1.2.5-3 [187 kB]
+Get:12 http://kali.download/kali kali-rolling/main amd64 libtaglibs-standard-jstlel-java all 1.2.5-3 [148 kB]
+Get:13 http://http.kali.org/kali kali-rolling/main amd64 libeclipse-jdt-core-java all 3.32.0+eclipse4.26-2 [6481 kB]
+Get:22 https://ppa.launchpadcontent.net/i2p-maintainers/i2p/ubuntu noble/main amd64 libjbigi-jni amd64 2.6.0-1~ubuntu1 [284 kB]
+Get:23 https://ppa.launchpadcontent.net/i2p-maintainers/i2p/ubuntu noble/main amd64 i2p all 2.6.0-1~ubuntu1 [74.0 kB]
+Get:14 http://kali.download/kali kali-rolling/main amd64 libtomcat9-java all 9.0.70-2 [6190 kB]
+Get:15 http://kali.download/kali kali-rolling/main amd64 libservice-wrapper-java all 3.5.51-2 [403 kB]
+Get:16 http://kali.download/kali kali-rolling/main amd64 libservice-wrapper-jni amd64 3.5.51-2 [117 kB]
+Get:17 http://kali.download/kali kali-rolling/main amd64 service-wrapper amd64 3.5.51-2 [246 kB]
+Get:19 http://kali.download/kali kali-rolling/main amd64 libgsecuredelete0 amd64 0.3-3.2 [25.3 kB]
+Get:20 http://kali.download/kali kali-rolling/main amd64 tor amd64 0.4.8.12-1 [2049 kB]
+Fetched 33.8 MB in 34s (990 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package famfamfam-flag-png.
+(Reading database ... 397922 files and directories currently installed.)
+Preparing to unpack .../00-famfamfam-flag-png_0.1-3.2_all.deb ...
+Unpacking famfamfam-flag-png (0.1-3.2) ...
+Selecting previously unselected package libgetopt-java.
+Preparing to unpack .../01-libgetopt-java_1.0.14+dfsg-6_all.deb ...
+Unpacking libgetopt-java (1.0.14+dfsg-6) ...
+Selecting previously unselected package libjson-simple-java.
+Preparing to unpack .../02-libjson-simple-java_2.3.0-1_all.deb ...
+Unpacking libjson-simple-java (2.3.0-1) ...
+Selecting previously unselected package libel-api-java.
+Preparing to unpack .../03-libel-api-java_3.0.0-3_all.deb ...
+Unpacking libel-api-java (3.0.0-3) ...
+Selecting previously unselected package libjsp-api-java.
+Preparing to unpack .../04-libjsp-api-java_2.3.4-3_all.deb ...
+Unpacking libjsp-api-java (2.3.4-3) ...
+Selecting previously unselected package libservlet-api-java.
+Preparing to unpack .../05-libservlet-api-java_4.0.1-2_all.deb ...
+Unpacking libservlet-api-java (4.0.1-2) ...
+Selecting previously unselected package libwebsocket-api-java.
+Preparing to unpack .../06-libwebsocket-api-java_1.1-2_all.deb ...
+Unpacking libwebsocket-api-java (1.1-2) ...
+Selecting previously unselected package libjetty9-java.
+Preparing to unpack .../07-libjetty9-java_9.4.54-1_all.deb ...
+Unpacking libjetty9-java (9.4.54-1) ...
+Selecting previously unselected package libtaglibs-standard-spec-java.
+Preparing to unpack .../08-libtaglibs-standard-spec-java_1.2.5-3_all.deb ...
+Unpacking libtaglibs-standard-spec-java (1.2.5-3) ...
+Selecting previously unselected package libtaglibs-standard-impl-java.
+Preparing to unpack .../09-libtaglibs-standard-impl-java_1.2.5-3_all.deb ...
+Unpacking libtaglibs-standard-impl-java (1.2.5-3) ...
+Selecting previously unselected package libtaglibs-standard-jstlel-java.
+Preparing to unpack .../10-libtaglibs-standard-jstlel-java_1.2.5-3_all.deb ...
+Unpacking libtaglibs-standard-jstlel-java (1.2.5-3) ...
+Selecting previously unselected package libeclipse-jdt-core-java.
+Preparing to unpack .../11-libeclipse-jdt-core-java_3.32.0+eclipse4.26-2_all.deb ...
+Unpacking libeclipse-jdt-core-java (3.32.0+eclipse4.26-2) ...
+Selecting previously unselected package libtomcat9-java.
+Preparing to unpack .../12-libtomcat9-java_9.0.70-2_all.deb ...
+Unpacking libtomcat9-java (9.0.70-2) ...
+Selecting previously unselected package i2p-router.
+Preparing to unpack .../13-i2p-router_2.6.0-1~ubuntu1_all.deb ...
+Unpacking i2p-router (2.6.0-1~ubuntu1) ...
+Selecting previously unselected package libjbigi-jni.
+Preparing to unpack .../14-libjbigi-jni_2.6.0-1~ubuntu1_amd64.deb ...
+Unpacking libjbigi-jni (2.6.0-1~ubuntu1) ...
+Selecting previously unselected package libservice-wrapper-java.
+Preparing to unpack .../15-libservice-wrapper-java_3.5.51-2_all.deb ...
+Unpacking libservice-wrapper-java (3.5.51-2) ...
+Selecting previously unselected package libservice-wrapper-jni.
+Preparing to unpack .../16-libservice-wrapper-jni_3.5.51-2_amd64.deb ...
+Unpacking libservice-wrapper-jni (3.5.51-2) ...
+Selecting previously unselected package service-wrapper.
+Preparing to unpack .../17-service-wrapper_3.5.51-2_amd64.deb ...
+Unpacking service-wrapper (3.5.51-2) ...
+Selecting previously unselected package i2p.
+Preparing to unpack .../18-i2p_2.6.0-1~ubuntu1_all.deb ...
+Unpacking i2p (2.6.0-1~ubuntu1) ...
+Selecting previously unselected package secure-delete.
+Preparing to unpack .../19-secure-delete_3.1-10_amd64.deb ...
+Unpacking secure-delete (3.1-10) ...
+Selecting previously unselected package libgsecuredelete0.
+Preparing to unpack .../20-libgsecuredelete0_0.3-3.2_amd64.deb ...
+Unpacking libgsecuredelete0 (0.3-3.2) ...
+Selecting previously unselected package tor.
+Preparing to unpack .../21-tor_0.4.8.12-1_amd64.deb ...
+Unpacking tor (0.4.8.12-1) ...
+Selecting previously unselected package tor-geoipdb.
+Preparing to unpack .../22-tor-geoipdb_0.4.8.12-1_all.deb ...
+Unpacking tor-geoipdb (0.4.8.12-1) ...
+Setting up libtaglibs-standard-spec-java (1.2.5-3) ...
+Setting up libgetopt-java (1.0.14+dfsg-6) ...
+Setting up libel-api-java (3.0.0-3) ...
+Setting up libjson-simple-java (2.3.0-1) ...
+Setting up libservice-wrapper-java (3.5.51-2) ...
+Setting up libeclipse-jdt-core-java (3.32.0+eclipse4.26-2) ...
+Setting up libtaglibs-standard-impl-java (1.2.5-3) ...
+Setting up libservice-wrapper-jni (3.5.51-2) ...
+Setting up libwebsocket-api-java (1.1-2) ...
+Setting up libtomcat9-java (9.0.70-2) ...
+Setting up libjsp-api-java (2.3.4-3) ...
+Setting up famfamfam-flag-png (0.1-3.2) ...
+Setting up service-wrapper (3.5.51-2) ...
+Setting up tor (0.4.8.12-1) ...
+Something or somebody made /var/lib/tor disappear.
+Creating one for you again.
+Something or somebody made /var/log/tor disappear.
+Creating one for you again.
+update-rc.d: We have no instructions for the tor init script.
+update-rc.d: It looks like a network service, we disable it.
+Setting up libservlet-api-java (4.0.1-2) ...
+Setting up secure-delete (3.1-10) ...
+Setting up libtaglibs-standard-jstlel-java (1.2.5-3) ...
+Setting up libjetty9-java (9.4.54-1) ...
+Setting up libgsecuredelete0 (0.3-3.2) ...
+Setting up i2p-router (2.6.0-1~ubuntu1) ...
+Setting up tor-geoipdb (0.4.8.12-1) ...
+Setting up libjbigi-jni (2.6.0-1~ubuntu1) ...
+Setting up i2p (2.6.0-1~ubuntu1) ...
+update-rc.d: We have no instructions for the i2p init script.
+update-rc.d: It looks like a network service, we disable it.
+Processing triggers for libc-bin (2.38-13) ...
+Processing triggers for man-db (2.12.1-2) ...
+Processing triggers for kali-menu (2024.3.1) ...
+dpkg-deb: building package 'kali-anonsurf' in 'kali-anonsurf.deb'.
+Selecting previously unselected package kali-anonsurf.
+(Reading database ... 399488 files and directories currently installed.)
+Preparing to unpack kali-anonsurf.deb ...
+Unpacking kali-anonsurf (1.2.3.1) ...
+Setting up kali-anonsurf (1.2.3.1) ...
+Processing triggers for kali-menu (2024.3.1) ...
+
+┌──(dp㉿kali)-[~/Downloads/kali-anonsurf]
+└─$ sudo anonsurf
+
+Parrot AnonSurf Module
+        Usage:
+        ┌──[root@kali]─[/home/dp/Downloads/kali-anonsurf]
+        └──╼ $ anonsurf {start|stop|restart|change|status}
+
+         start - Start system-wide anonymous
+                  tunneling under TOR proxy through iptables
+         stop - Reset original iptables settings
+                  and return to clear navigation
+         restart - Combines "stop" and "start" options
+         change - Changes identity restarting TOR
+         status - Check if AnonSurf is working properly
+         myip - Show your current IP address
+        ----[ I2P related features ]----
+         starti2p - Start i2p services
+         stopi2p - Stop i2p services
+
+┌──(dp㉿kali)-[~/Downloads/kali-anonsurf]
+└─$ sudo anonsurf start
+ * killing dangerous applications
+ * cleaning some dangerous cache elements
+[ i ] Stopping IPv6 services:
+
+
+[ i ] Starting anonymous mode:
+
+ * Tor is not running!  starting it  for you
+
+ * Saved iptables rules
+
+ * Modified resolv.conf to use Tor and Private Internet Access DNS
+ * All traffic was redirected through Tor
+
+[ i ] You are under AnonSurf tunnel
+
+
+
+┌──(dp㉿kali)-[~/Downloads/kali-anonsurf]
+└─$ anonsurf myip
+
+My ip is:
+
+{
+  "ip": "185.106.94.195",
+  "hostname": "tor.node15.shadowbrokers.eu",
+  "anycast": true,
+  "city": "Vienna",
+  "region": "Vienna",
+  "country": "AT",
+  "loc": "48.2085,16.3721",
+  "org": "AS210644 AEZA INTERNATIONAL LTD",
+  "postal": "1010",
+  "timezone": "Europe/Vienna",
+  "readme": "https://ipinfo.io/missingauth"
+}
+
+----------------------------------------------------------------------
+
+
+┌──(dp㉿kali)-[~/Downloads/kali-anonsurf]
+└─$ anonsurf status
+● tor.service - Anonymizing overlay network for TCP (multi-instance-master)
+     Loaded: loaded (/usr/lib/systemd/system/tor.service; disabled; preset: disabled)
+     Active: active (exited) since Fri 2024-07-26 09:14:23 IST; 2min 24s ago
+ Invocation: 2cd03ad9591a43ed9efabc8d4dbd212e
+    Process: 5629 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+   Main PID: 5629 (code=exited, status=0/SUCCESS)
+
+Jul 26 09:14:23 kali systemd[1]: Starting tor.service - Anonymizing overlay network for TCP (multi-instance-master)...
+Jul 26 09:14:23 kali systemd[1]: Finished tor.service - Anonymizing overlay network for TCP (multi-instance-master).
+
+
+┌──(dp㉿kali)-[~/Downloads/kali-anonsurf]
+└─$ anonsurf restart
+ * killing dangerous applications
+ * cleaning some dangerous cache elements
+[!]  This script must be run as root
+
+ * killing dangerous applications
+ * cleaning some dangerous cache elements
+[!]  This script must be run as root
+
+
+
+┌──(dp㉿kali)-[~/Downloads/kali-anonsurf]
+└─$ sudo anonsurf restart
+ * killing dangerous applications
+ * cleaning some dangerous cache elements
+[ i ] Stopping anonymous mode:
+
+ * Deleted all iptables rules
+
+ * Iptables rules restored
+
+[ i ] Reenabling IPv6 services:
+
+ * Anonymous mode stopped
+
+
+ * killing dangerous applications
+ * cleaning some dangerous cache elements
+[ i ] Stopping IPv6 services:
+
+
+[ i ] Starting anonymous mode:
+
+ * Tor is not running!  starting it  for you
+
+ * Saved iptables rules
+
+ * Modified resolv.conf to use Tor and Private Internet Access DNS
+ * All traffic was redirected through Tor
+
+[ i ] You are under AnonSurf tunnel
+
+
+
+
+┌──(dp㉿kali)-[~/Downloads/kali-anonsurf]
+└─$ anonsurf stop
+ * killing dangerous applications
+ * cleaning some dangerous cache elements
+[!]  This script must be run as root
+
+
+┌──(dp㉿kali)-[~/Downloads/kali-anonsurf]
+└─$ sudo anonsurf stop
+ * killing dangerous applications
+ * cleaning some dangerous cache elements
+[ i ] Stopping anonymous mode:
+
+ * Deleted all iptables rules
+
+ * Iptables rules restored
+
+[ i ] Reenabling IPv6 services:
+
+ * Anonymous mode stopped
+
+
+
+┌──(dp㉿kali)-[~/Downloads/kali-anonsurf]
+└─$
