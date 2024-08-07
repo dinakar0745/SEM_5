@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SalesReport>
+    <Date>02-08-2024</Date>
+    <Book>
+        <Title>Book Title</Title>
+        <Authors>
+            <Author>Author A</Author>
+            <Author>Author B</Author>
+        </Authors>
+        <ISBN>1234567890</ISBN>
+        <Genre>Fiction</Genre>
+        <PublicationYear>2020</PublicationYear>
+        <Price>19.99</Price>
+        <NumberSold>5</NumberSold>
+        <NumberAvailable>10</NumberAvailable>
+    </Book>
+</SalesReport>
