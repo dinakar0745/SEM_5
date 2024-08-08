@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predicted Selling Price</h1>
+        <p>The estimated selling price of the car is: ₹{{ price }}</p>
+        <a href="/">Predict Another Price</a>
+    </div>
+</body>
+</html>
