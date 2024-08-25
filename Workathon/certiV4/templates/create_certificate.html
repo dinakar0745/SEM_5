@@ -1,0 +1,319 @@
+<!-- <!doctype html>
+<html>
+<head>
+    <title>Create Certificate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 60%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #444;
+            text-align: center;
+        }
+
+        form {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="file"],
+        select,
+        input[type="submit"] {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Certificate</h1>
+        <form action="/create_certificate" method="post" enctype="multipart/form-data">
+            <label for="file">Upload CSV File:</label>
+            <input type="file" id="file" name="file" accept=".csv" required>
+            <br>
+            <label for="certificate_type">Select Certificate Type:</label>
+            <select id="certificate_type" name="certificate_type">
+                <option value="Merit">Merit</option>
+                <option value="Participation">Participation</option>
+                <option value="Completion">Completion</option>
+            </select>
+            <br>
+            <input type="submit" value="Generate Certificates">
+        </form>
+    </div>
+</body>
+</html> -->
+
+
+
+<!doctype html>
+<html>
+<head>
+    <title>Create Certificate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            width: 60%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
+            color: #444;
+            margin-bottom: 20px;
+            animation: bounceIn 1s ease-out;
+        }
+
+        @keyframes bounceIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            width: 100%;
+            text-align: left;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .drop-zone {
+            width: 100%;
+            max-width: 600px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+            font-size: 18px;
+            animation: fadeIn 1s ease-in;
+            position: relative;
+        }
+
+        .drop-zone.dragover {
+            background-color: #e0f7fa;
+            border-color: #007BFF;
+        }
+
+        .drop-zone.dragover p {
+            color: #007BFF;
+        }
+
+        .drop-zone p {
+            margin: 0;
+            color: #666;
+            animation: textGlow 1.5s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 5px rgba(0,0,0,0.5); }
+            to { text-shadow: 0 0 15px rgba(0,0,0,0.3); }
+        }
+
+        .drop-zone input[type="file"] {
+            display: none;
+        }
+
+        select {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 18px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1s ease-in;
+        }
+
+        select:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        input[type="submit"],
+        .download-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 10px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .download-button {
+            background-color: #28a745;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 12px;
+            padding: 8px 16px;
+        }
+
+        .download-button:hover {
+            background-color: #218838;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        .download-button:active {
+            background-color: #1e7e34;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px) scale(0.95);
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+            padding: 12px 20px;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #0056b3, #003d80);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        input[type="submit"]:active {
+            background: linear-gradient(135deg, #003d80, #001f3f);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px) scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Certificate</h1>
+        <form action="/create_certificate" method="post" enctype="multipart/form-data">
+            <label for="file">Upload CSV File:</label>
+            <div class="drop-zone" id="drop-zone">
+                <p id="drop-text">Drag & Drop CSV File Here or Click to Select a File</p>
+                <input type="file" id="file" name="file" accept=".csv" required>
+            </div>
+            <br>
+            <label for="certificate_type">Select Certificate Type:</label>
+            <select id="certificate_type" name="certificate_type">
+                <option value="Merit">Merit</option>
+                <option value="Participation">Participation</option>
+                <option value="Completion">Completion</option>
+            </select>
+            <br>
+            <a href="/static/Sample.csv" class="download-button" download>Download Sample CSV</a>
+            <br>
+            <input type="submit" value="Generate Certificates">
+        </form>
+    </div>
+
+    <script>
+        const dropZone = document.getElementById('drop-zone');
+        const dropText = document.getElementById('drop-text');
+        const fileInput = document.getElementById('file');
+
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                dropText.innerText = files[0].name;
+            }
+        });
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                dropText.innerText = fileInput.files[0].name;
+            }
+        });
+    </script>
+</body>
+</html>

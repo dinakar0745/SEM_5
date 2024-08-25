@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Certificate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: bodyBgChange 5s infinite alternate;
+        }
+
+        @keyframes bodyBgChange {
+            0% { background-color: #f5f5f5; }
+            50% { background-color: #e0f7fa; }
+            100% { background-color: #f5f5f5; }
+        }
+
+        .container {
+            width: 60%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verify Certificate</h1>
+        <form action="/verify_certificate" method="get">
+            <div class="form-group">
+                <label for="certificate_id">Enter Certificate ID:</label>
+                <input type="text" id="certificate_id" name="certificate_id" required>
+            </div>
+            <button type="submit">Verify</button>
+        </form>
+        <div class="result">
+            <!-- This is where the result will be displayed -->
+            {% if certificate_url %}
+                <p>Certificate found: <a href="{{ certificate_url }}" target="_blank">View Certificate</a></p>
+            {% elif error %}
+                <p>{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

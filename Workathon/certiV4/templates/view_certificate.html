@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates Generated</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: backgroundColorChange 10s infinite alternate;
+        }
+
+        @keyframes backgroundColorChange {
+            0% { background-color: #f8f9fa; }
+            50% { background-color: #e9ecef; }
+            100% { background-color: #f8f9fa; }
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 1200px;
+            animation: fadeIn 1s ease-out, slideInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(20px); }
+            to { transform: translateY(0); }
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            animation: tableFadeIn 1s ease-out;
+        }
+
+        @keyframes tableFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+            transition: background-color 0.3s ease;
+        }
+
+        th {
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #e9ecef;
+            animation: rowHover 0.3s ease;
+        }
+
+        @keyframes rowHover {
+            from { background-color: #fff; }
+            to { background-color: #e9ecef; }
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            animation: buttonPulse 2s infinite;
+        }
+
+        @keyframes buttonPulse {
+            0% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); }
+            50% { box-shadow: 0 0 20px rgba(0, 123, 255, 0.6); }
+            100% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); }
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            background-color: #004494;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Certificates Generated</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Certificate URL</th>
+                <th>QR Code URL</th>
+            </tr>
+            {% for cert in certificates %}
+            <tr>
+                <td>{{ cert['Name'] }}</td>
+                <td><a href="{{ cert['CertURL'] }}">Verify Certificate</a></td>
+                <td><a href="{{ cert['QRURL'] }}">View QR Code</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="button">Go to Home</a>
+    </div>
+</body>
+</html>

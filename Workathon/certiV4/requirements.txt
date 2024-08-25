@@ -1,0 +1,6 @@
+Flask
+pandas
+firebase-admin
+reportlab
+python-dotenv
+qrcode
