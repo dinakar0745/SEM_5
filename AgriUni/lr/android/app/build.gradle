@@ -1,0 +1,43 @@
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "com.google.gms.google-services" // Apply the plugin for Google services
+}
+
+android {
+    namespace = "com.example.lr"
+    compileSdk = 31
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8" // Use "1.8" as a string instead of JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.lr"
+        minSdk = 21
+        targetSdk = 31
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:28.4.1')
+    implementation 'com.google.firebase:firebase-auth'
+}
+
+flutter {
+    source = "../.."
+}
