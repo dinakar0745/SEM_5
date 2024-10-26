@@ -9,14 +9,14 @@ def sha256_hash(input_string):
     return sha256.hexdigest()
 
 input_text = "Hello, World!"
-hash_result = sha256_hash(input_text)
+result = sha256_hash(input_text)
     
 print(f"Input: {input_text}")
-print(f"SHA-256 Hash: {hash_result}")
+print(f"SHA-256 Hash: {result}")
 
 while True:
     user_input = input("\nEnter text to hash (or 'quit' to exit): ")
     if user_input.lower() == 'quit':
        break
-    hash_result = sha256_hash(user_input)
-    print(f"SHA-256 Hash: {hash_result}")
+    result = sha256_hash(user_input)
+    print(f"SHA-256 Hash: {result}")
